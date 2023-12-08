@@ -1,0 +1,690 @@
+127751 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+127751 openat(AT_FDCWD, "/usr/lib/libnm.so.0", O_RDONLY|O_CLOEXEC) = 3
+127751 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+127751 openat(AT_FDCWD, "/usr/lib/libgio-2.0.so.0", O_RDONLY|O_CLOEXEC) = 3
+127751 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+127751 openat(AT_FDCWD, "/usr/lib/libgobject-2.0.so.0", O_RDONLY|O_CLOEXEC) = 3
+127751 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+127751 openat(AT_FDCWD, "/usr/lib/libglib-2.0.so.0", O_RDONLY|O_CLOEXEC) = 3
+127751 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+127751 openat(AT_FDCWD, "/usr/lib/libreadline.so.8", O_RDONLY|O_CLOEXEC) = 3
+127751 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+127751 openat(AT_FDCWD, "/usr/lib/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3
+127751 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+127751 openat(AT_FDCWD, "/usr/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+127751 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\220~\2\0\0\0\0\0"..., 832) = 832
+127751 openat(AT_FDCWD, "/usr/lib/libgmodule-2.0.so.0", O_RDONLY|O_CLOEXEC) = 3
+127751 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+127751 openat(AT_FDCWD, "/usr/lib/libudev.so.1", O_RDONLY|O_CLOEXEC) = 3
+127751 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+127751 openat(AT_FDCWD, "/usr/lib/libsmime3.so", O_RDONLY|O_CLOEXEC) = 3
+127751 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+127751 openat(AT_FDCWD, "/usr/lib/libnss3.so", O_RDONLY|O_CLOEXEC) = 3
+127751 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+127751 openat(AT_FDCWD, "/usr/lib/libnspr4.so", O_RDONLY|O_CLOEXEC) = 3
+127751 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+127751 openat(AT_FDCWD, "/usr/lib/libz.so.1", O_RDONLY|O_CLOEXEC) = 3
+127751 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+127751 openat(AT_FDCWD, "/usr/lib/libmount.so.1", O_RDONLY|O_CLOEXEC) = 3
+127751 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+127751 openat(AT_FDCWD, "/usr/lib/libffi.so.8", O_RDONLY|O_CLOEXEC) = 3
+127751 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+127751 openat(AT_FDCWD, "/usr/lib/libpcre2-8.so.0", O_RDONLY|O_CLOEXEC) = 3
+127751 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+127751 openat(AT_FDCWD, "/usr/lib/libncursesw.so.6", O_RDONLY|O_CLOEXEC) = 3
+127751 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+127751 openat(AT_FDCWD, "/usr/lib/libcap.so.2", O_RDONLY|O_CLOEXEC) = 3
+127751 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0 s\0\0\0\0\0\0"..., 832) = 832
+127751 openat(AT_FDCWD, "/usr/lib/libnssutil3.so", O_RDONLY|O_CLOEXEC) = 3
+127751 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+127751 openat(AT_FDCWD, "/usr/lib/libplds4.so", O_RDONLY|O_CLOEXEC) = 3
+127751 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+127751 openat(AT_FDCWD, "/usr/lib/libplc4.so", O_RDONLY|O_CLOEXEC) = 3
+127751 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+127751 openat(AT_FDCWD, "/usr/lib/libblkid.so.1", O_RDONLY|O_CLOEXEC) = 3
+127751 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+127751 openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+127751 openat(AT_FDCWD, "/usr/share/locale/locale.alias", O_RDONLY|O_CLOEXEC) = 3
+127751 read(3, "# Locale name alias data base.\n#"..., 4096) = 2998
+127751 read(3, "", 4096)                = 0
+127751 openat(AT_FDCWD, "/usr/share/locale/en_US.UTF-8/LC_MESSAGES/NetworkManager.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+127751 openat(AT_FDCWD, "/usr/share/locale/en_US.utf8/LC_MESSAGES/NetworkManager.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+127751 openat(AT_FDCWD, "/usr/share/locale/en_US/LC_MESSAGES/NetworkManager.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+127751 openat(AT_FDCWD, "/usr/share/locale/en.UTF-8/LC_MESSAGES/NetworkManager.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+127751 openat(AT_FDCWD, "/usr/share/locale/en.utf8/LC_MESSAGES/NetworkManager.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+127751 openat(AT_FDCWD, "/usr/share/locale/en/LC_MESSAGES/NetworkManager.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+127751 ioctl(1, TCGETS, {c_iflag=BRKINT|ICRNL|IXON|IXANY|IMAXBEL|IUTF8, c_oflag=NL0|CR0|TAB0|BS0|VT0|FF0|OPOST|ONLCR, c_cflag=B38400|CS8|CREAD|HUPCL, c_lflag=ISIG|ICANON|ECHO|ECHOE|ECHOK|IEXTEN|ECHOCTL|ECHOKE, ...}) = 0
+127751 openat(AT_FDCWD, "/home/brijesh/.config/terminal-colors.d/nmcli@xterm-256color.scheme", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+127751 openat(AT_FDCWD, "/home/brijesh/.config/terminal-colors.d/nmcli@xterm-256color.schem", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+127751 openat(AT_FDCWD, "/home/brijesh/.config/terminal-colors.d/nmcli.scheme", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+127751 openat(AT_FDCWD, "/home/brijesh/.config/terminal-colors.d/nmcli.schem", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+127751 openat(AT_FDCWD, "/home/brijesh/.config/terminal-colors.d/@xterm-256color.scheme", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+127751 openat(AT_FDCWD, "/home/brijesh/
+
+qig/terminal-colors.d/@xterm-256color.schem", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+127751 openat(AT_FDCWD, "/home/brijesh/.config/terminal-colors.d/scheme", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+127751 openat(AT_FDCWD, "/home/brijesh/.config/terminal-colors.d/schem", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+127751 openat(AT_FDCWD, "/etc/terminal-colors.d/nmcli@xterm-256color.scheme", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+127751 openat(AT_FDCWD, "/etc/terminal-colors.d/nmcli@xterm-256color.schem", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+127751 openat(AT_FDCWD, "/etc/terminal-colors.d/nmcli.scheme", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+127751 openat(AT_FDCWD, "/etc/terminal-colors.d/nmcli.schem", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+127751 openat(AT_FDCWD, "/etc/terminal-colors.d/@xterm-256color.scheme", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+127751 openat(AT_FDCWD, "/etc/terminal-colors.d/@xterm-256color.schem", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+127751 openat(AT_FDCWD, "/etc/terminal-colors.d/scheme", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+127751 openat(AT_FDCWD, "/etc/terminal-colors.d/schem", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+127752 read(4, "\1\0\0\0\0\0\0\0", 8)   = 8
+127751 openat(AT_FDCWD, "/usr/share/locale/en_US.UTF-8/LC_MESSAGES/glib20.mo", O_RDONLY <unfinished ...>
+127752 read(4,  <unfinished ...>
+127751 <... openat resumed>)            = -1 ENOENT (No such file or directory)
+127752 <... read resumed>0x7f26e3bfdc40, 8) = -1 EAGAIN (Resource temporarily unavailable)
+127751 openat(AT_FDCWD, "/usr/share/locale/en_US.utf8/LC_MESSAGES/glib20.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+127751 openat(AT_FDCWD, "/usr/share/locale/en_US/LC_MESSAGES/glib20.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+127751 openat(AT_FDCWD, "/usr/share/locale/en.UTF-8/LC_MESSAGES/glib20.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+127751 openat(AT_FDCWD, "/usr/share/locale/en.utf8/LC_MESSAGES/glib20.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+127751 openat(AT_FDCWD, "/usr/share/locale/en/LC_MESSAGES/glib20.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+127754 socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC, 0) = 5
+127755 read(6, "\1\0\0\0\0\0\0\0", 8)   = 8
+127755 read(6, 0x7f26e23fac40, 8)       = -1 EAGAIN (Resource temporarily unavailable)
+127755 read(6, "\3\0\0\0\0\0\0\0", 8)   = 8
+127755 read(6, 0x7f26e23fac40, 8)       = -1 EAGAIN (Resource temporarily unavailable)
+127754 read(7, "\1\0\0\0\0\0\0\0", 8)   = 8
+127754 read(7, 0x7f26e2bfb930, 8)       = -1 EAGAIN (Resource temporarily unavailable)
+127751 read(3, "\1\0\0\0\0\0\0\0", 8)   = 8
+127751 read(3, 0x7ffc588b2130, 8)       = -1 EAGAIN (Resource temporarily unavailable)
+127755 read(6, "\3\0\0\0\0\0\0\0", 8)   = 8
+127755 read(6, 0x7f26e23fac40, 8)       = -1 EAGAIN (Resource temporarily unavailable)
+127755 read(6, "\3\0\0\0\0\0\0\0", 8)   = 8
+127755 read(6, 0x7f26e23fac40, 8)       = -1 EAGAIN (Resource temporarily unavailable)
+127751 read(3, "\1\0\0\0\0\0\0\0", 8)   = 8
+127751 read(3, 0x7ffc588b2130, 8)       = -1 EAGAIN (Resource temporarily unavailable)
+127755 read(6, "\10\0\0\0\0\0\0\0", 8)  = 8
+127755 read(6, 0x7f26e23fac40, 8)       = -1 EAGAIN (Resource temporarily unavailable)
+127755 read(6, "\3\0\0\0\0\0\0\0", 8)   = 8
+127755 read(6, 0x7f26e23fac40, 8)       = -1 EAGAIN (Resource temporarily unavailable)
+127751 read(3, "\1\0\0\0\0\0\0\0", 8)   = 8
+127751 read(3, 0x7ffc588b2130, 8)       = -1 EAGAIN (Resource temporarily unavailable)
+127755 read(6, "\1\0\0\0\0\0\0\0", 8)   = 8
+127755 read(6, 0x7f26e23fac40, 8)       = -1 EAGAIN (Resource temporarily unavailable)
+127755 read(6, "\1\0\0\0\0\0\0\0", 8)   = 8
+127755 read(6, 0x7f26e23fac40, 8)       = -1 EAGAIN (Resource temporarily unavailable)
+127755 read(6, "\1\0\0\0\0\0\0\0", 8)   = 8
+127755 read(6, 0x7f26e23fac40, 8)       = -1 EAGAIN (Resource temporarily unavailable)
+127755 read(6, "\3\0\0\0\0\0\0\0", 8)   = 8
+127755 read(6, 0x7f26e23fac40, 8)       = -1 EAGAIN (Resource temporarily unavailable)
+127751 read(3, "\1\0\0\0\0\0\0\0", 8)   = 8
+127751 read(3, 0x7ffc588b2130, 8)       = -1 EAGAIN (Resource temporarily unavailable)
+127751 read(3, "\1\0\0\0\0\0\0\0", 8)   = 8
+127751 read(3, 0x7ffc588b2130, 8)       = -1 EAGAIN (Resource temporarily unavailable)
+127751 read(3, "\1\0\0\0\0\0\0\0", 8)   = 8
+127751 read(3, 0x7ffc588b2130, 8)       = -1 EAGAIN (Resource temporarily unavailable)
+127751 read(3, "\1\0\0\0\0\0\0\0", 8)   = 8
+127751 read(3, 0x7ffc588b2130, 8)       = -1 EAGAIN (Resource temporarily unavailable)
+127755 read(6, "\1\0\0\0\0\0\0\0", 8)   = 8
+127755 read(6, 0x7f26e23fac40, 8)       = -1 EAGAIN (Resource temporarily unavailable)
+127751 openat(AT_FDCWD, "/usr/lib/charset.alias", O_RDONLY) = -1 ENOENT (No such file or directory)
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 8
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "class", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "net", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "wlp3s0", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(10, "..", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "..", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH|O_DIRECTORY) = 10
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127758 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+127751 openat(9, "pci0000:00", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127758 openat(AT_FDCWD, "/usr/lib/libncursesw.so.6", O_RDONLY|O_CLOEXEC <unfinished ...>
+127751 openat(10, "0000:00:02.2", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127758 <... openat resumed>)            = 3
+127758 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+127751 openat(9, "0000:03:00.0", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "net", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "wlp3s0", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127758 openat(AT_FDCWD, "/usr/lib/libpcre2-8.so.0", O_RDONLY|O_CLOEXEC) = 3
+127758 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+127751 openat(AT_FDCWD, "/sys/devices/pci0000:00/0000:00:02.2/0000:03:00.0/net/wlp3s0/uevent", O_RDONLY|O_NOCTTY|O_CLOEXEC) = 7
+127751 read(7, "DEVTYPE=wlan\nINTERFACE=wlp3s0\nIF"..., 4104) = 40
+127758 openat(AT_FDCWD, "/usr/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+127758 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\220~\2\0\0\0\0\0"..., 832) = 832
+127751 openat(AT_FDCWD, "/run/udev/data/n3", O_RDONLY|O_CLOEXEC) = 7
+127751 read(7, "I:3482440\nE:ID_NET_NAMING_SCHEME"..., 4096) = 694
+127751 read(7, "", 4096)                = 0
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 8
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "pci0000:00", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "0000:00:02.2", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127758 ioctl(1, TCGETS, {c_iflag=BRKINT|ICRNL|IXON|IXANY|IMAXBEL|IUTF8, c_oflag=NL0|CR0|TAB0|BS0|VT0|FF0|OPOST|ONLCR, c_cflag=B38400|CS8|CREAD|HUPCL, c_lflag=ISIG|ICANON|ECHO|ECHOE|ECHOK|IEXTEN|ECHOCTL|ECHOKE, ...}) = 0
+127751 openat(9, "0000:03:00.0", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "net", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH <unfinished ...>
+127758 openat(AT_FDCWD, "/usr/bin/.sysless", O_RDONLY <unfinished ...>
+127751 <... openat resumed>)            = 9
+127758 <... openat resumed>)            = -1 ENOENT (No such file or directory)
+127758 openat(AT_FDCWD, "/etc/syslesskey", O_RDONLY) = -1 ENOENT (No such file or directory)
+127758 openat(AT_FDCWD, "/etc/sysless", O_RDONLY) = -1 ENOENT (No such file or directory)
+127758 openat(AT_FDCWD, "/home/brijesh/.config/lesskey", O_RDONLY <unfinished ...>
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY <unfinished ...>
+127758 <... openat resumed>)            = -1 ENOENT (No such file or directory)
+127751 <... openat resumed>)            = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY <unfinished ...>
+127758 openat(AT_FDCWD, "/home/brijesh/.lesskey", O_RDONLY <unfinished ...>
+127751 <... openat resumed>)            = 8
+127758 <... openat resumed>)            = -1 ENOENT (No such file or directory)
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY <unfinished ...>
+127758 openat(AT_FDCWD, "/home/brijesh/.config/less", O_RDONLY <unfinished ...>
+127751 <... openat resumed>)            = 9
+127758 <... openat resumed>)            = -1 ENOENT (No such file or directory)
+127758 openat(AT_FDCWD, "/home/brijesh/.less", O_RDONLY) = -1 ENOENT (No such file or directory)
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH <unfinished ...>
+127758 ioctl(1, TCGETS <unfinished ...>
+127751 <... openat resumed>)            = 10
+127758 <... ioctl resumed>, {c_iflag=BRKINT|ICRNL|IXON|IXANY|IMAXBEL|IUTF8, c_oflag=NL0|CR0|TAB0|BS0|VT0|FF0|OPOST|ONLCR, c_cflag=B38400|CS8|CREAD|HUPCL, c_lflag=ISIG|ICANON|ECHO|ECHOE|ECHOK|IEXTEN|ECHOCTL|ECHOKE, ...}) = 0
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "pci0000:00", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "0000:00:02.2", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "0000:03:00.0", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(AT_FDCWD, "/sys/devices/pci0000:00/0000:00:02.2/0000:03:00.0/uevent", O_RDONLY|O_NOCTTY|O_CLOEXEC) = 7
+127751 read(7,  <unfinished ...>
+127758 openat(AT_FDCWD, "/usr/share/terminfo/x/xterm-256color", O_RDONLY <unfinished ...>
+127751 <... read resumed>"DRIVER=rtw_8822ce\nPCI_CLASS=2800"..., 4104) = 165
+127758 <... openat resumed>)            = 3
+127751 openat(AT_FDCWD, "/run/udev/data/+pci:0000:03:00.0", O_RDONLY|O_CLOEXEC) = 7
+127758 read(3,  <unfinished ...>
+127751 read(7,  <unfinished ...>
+127758 <... read resumed>"\36\2%\0&\0\17\0\235\1Z\6xterm-256color|xterm"..., 32768) = 4044
+127751 <... read resumed>"I:2664533\nE:ID_PCI_CLASS_FROM_DA"..., 4096) = 303
+127758 read(3,  <unfinished ...>
+127751 read(7,  <unfinished ...>
+127758 <... read resumed>"", 28672)     = 0
+127751 <... read resumed>"", 4096)      = 0
+127758 ioctl(1, TCGETS <unfinished ...>
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY <unfinished ...>
+127758 <... ioctl resumed>, {c_iflag=BRKINT|ICRNL|IXON|IXANY|IMAXBEL|IUTF8, c_oflag=NL0|CR0|TAB0|BS0|VT0|FF0|OPOST|ONLCR, c_cflag=B38400|CS8|CREAD|HUPCL, c_lflag=ISIG|ICANON|ECHO|ECHOE|ECHOK|IEXTEN|ECHOCTL|ECHOKE, ...}) = 0
+127751 <... openat resumed>)            = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY <unfinished ...>
+127758 ioctl(1, TCGETS <unfinished ...>
+127751 <... openat resumed>)            = 8
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY <unfinished ...>
+127758 <... ioctl resumed>, {c_iflag=BRKINT|ICRNL|IXON|IXANY|IMAXBEL|IUTF8, c_oflag=NL0|CR0|TAB0|BS0|VT0|FF0|OPOST|ONLCR, c_cflag=B38400|CS8|CREAD|HUPCL, c_lflag=ISIG|ICANON|ECHO|ECHOE|ECHOK|IEXTEN|ECHOCTL|ECHOKE, ...}) = 0
+127751 <... openat resumed>)            = 9
+127758 ioctl(1, TCGETS, {c_iflag=BRKINT|ICRNL|IXON|IXANY|IMAXBEL|IUTF8, c_oflag=NL0|CR0|TAB0|BS0|VT0|FF0|OPOST|ONLCR, c_cflag=B38400|CS8|CREAD|HUPCL, c_lflag=ISIG|ICANON|ECHO|ECHOE|ECHOK|IEXTEN|ECHOCTL|ECHOKE, ...}) = 0
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH <unfinished ...>
+127758 ioctl(1, TCGETS <unfinished ...>
+127751 <... openat resumed>)            = 10
+127758 <... ioctl resumed>, {c_iflag=BRKINT|ICRNL|IXON|IXANY|IMAXBEL|IUTF8, c_oflag=NL0|CR0|TAB0|BS0|VT0|FF0|OPOST|ONLCR, c_cflag=B38400|CS8|CREAD|HUPCL, c_lflag=ISIG|ICANON|ECHO|ECHOE|ECHOK|IEXTEN|ECHOCTL|ECHOKE, ...}) = 0
+127758 ioctl(1, TIOCGWINSZ, {ws_row=30, ws_col=197, ws_xpixel=0, ws_ypixel=0}) = 0
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127758 ioctl(2, TIOCGWINSZ, {ws_row=30, ws_col=197, ws_xpixel=0, ws_ypixel=0}) = 0
+127751 openat(9, "pci0000:00", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH <unfinished ...>
+127758 openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC <unfinished ...>
+127751 <... openat resumed>)            = 10
+127758 <... openat resumed>)            = 3
+127751 openat(10, "0000:00:02.2", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127758 openat(AT_FDCWD, "/home/brijesh/.local/state", O_RDONLY) = 3
+127758 openat(AT_FDCWD, "/home/brijesh/.local/state/lesshst", O_RDONLY) = 3
+127751 openat(AT_FDCWD, "/sys/devices/pci0000:00/0000:00:02.2/uevent", O_RDONLY|O_NOCTTY|O_CLOEXEC <unfinished ...>
+127758 openat(AT_FDCWD, "/home/brijesh/.local/state/lesshst", O_RDONLY <unfinished ...>
+127751 <... openat resumed>)            = 7
+127758 <... openat resumed>)            = 3
+127751 read(7,  <unfinished ...>
+127758 read(3,  <unfinished ...>
+127751 <... read resumed>"DRIVER=pcieport\nPCI_CLASS=60400\n"..., 4104) = 163
+127758 <... read resumed>".less-history-file:\n", 4096) = 20
+127758 read(3, "", 4096)                = 0
+127758 ioctl(2, TCGETS <unfinished ...>
+127751 openat(AT_FDCWD, "/run/udev/data/+pci:0000:00:02.2", O_RDONLY|O_CLOEXEC <unfinished ...>
+127758 <... ioctl resumed>, {c_iflag=BRKINT|ICRNL|IXON|IXANY|IMAXBEL|IUTF8, c_oflag=NL0|CR0|TAB0|BS0|VT0|FF0|OPOST|ONLCR, c_cflag=B38400|CS8|CREAD|HUPCL, c_lflag=ISIG|ICANON|ECHO|ECHOE|ECHOK|IEXTEN|ECHOCTL|ECHOKE, ...}) = 0
+127751 <... openat resumed>)            = 7
+127758 ioctl(2, TCGETS, {c_iflag=BRKINT|ICRNL|IXON|IXANY|IMAXBEL|IUTF8, c_oflag=NL0|CR0|TAB0|BS0|VT0|FF0|OPOST|ONLCR, c_cflag=B38400|CS8|CREAD|HUPCL, c_lflag=ISIG|ICANON|ECHO|ECHOE|ECHOK|IEXTEN|ECHOCTL|ECHOKE, ...}) = 0
+127751 read(7, "I:2664375\nE:ID_PCI_CLASS_FROM_DA"..., 4096) = 315
+127751 read(7, "", 4096)                = 0
+127758 openat(AT_FDCWD, "/dev/pts/1", O_RDONLY) = 3
+127758 ioctl(3, TCGETS <unfinished ...>
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY <unfinished ...>
+127758 <... ioctl resumed>, {c_iflag=BRKINT|ICRNL|IXON|IXANY|IMAXBEL|IUTF8, c_oflag=NL0|CR0|TAB0|BS0|VT0|FF0|OPOST|ONLCR, c_cflag=B38400|CS8|CREAD|HUPCL, c_lflag=ISIG|ICANON|ECHO|ECHOE|ECHOK|IEXTEN|ECHOCTL|ECHOKE, ...}) = 0
+127751 <... openat resumed>)            = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 8
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY <unfinished ...>
+127758 ioctl(3, TCSETSW, {c_iflag=BRKINT|ICRNL|IXON|IXANY|IMAXBEL|IUTF8, c_oflag=NL0|CR0|XTABS|BS0|VT0|FF0|OPOST|ONLCR, c_cflag=B38400|CS8|CREAD|HUPCL, c_lflag=ISIG|IEXTEN|ECHOCTL|ECHOKE, ...} <unfinished ...>
+127751 <... openat resumed>)            = 9
+127758 <... ioctl resumed>)             = 0
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127758 ioctl(0, TCGETS, 0x7ffd11b17d50) = -1 ENOTTY (Inappropriate ioctl for device)
+127751 openat(9, "pci0000:00", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH <unfinished ...>
+127758 ioctl(0, TCGETS <unfinished ...>
+127751 <... openat resumed>)            = 10
+127758 <... ioctl resumed>, 0x7ffd11b17bc0) = -1 ENOTTY (Inappropriate ioctl for device)
+127758 read(0, "\33[32mwlp3s0: connected to Airtel"..., 8192) = 45
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 8
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "class", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "net", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "wlp3s0", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(10, "..", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "..", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH|O_DIRECTORY) = 10
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "pci0000:00", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "0000:00:02.2", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "0000:03:00.0", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "net", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "wlp3s0", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(AT_FDCWD, "/sys/devices/pci0000:00/0000:00:02.2/0000:03:00.0/net/wlp3s0/uevent", O_RDONLY|O_NOCTTY|O_CLOEXEC) = 7
+127751 read(7, "DEVTYPE=wlan\nINTERFACE=wlp3s0\nIF"..., 4104) = 40
+127751 openat(AT_FDCWD, "/run/udev/data/n3", O_RDONLY|O_CLOEXEC) = 7
+127751 read(7, "I:3482440\nE:ID_NET_NAMING_SCHEME"..., 4096) = 694
+127751 read(7, "", 4096)                = 0
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 8
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "pci0000:00", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "0000:00:02.2", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "0000:03:00.0", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "net", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 8
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "pci0000:00", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "0000:00:02.2", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "0000:03:00.0", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(AT_FDCWD, "/sys/devices/pci0000:00/0000:00:02.2/0000:03:00.0/uevent", O_RDONLY|O_NOCTTY|O_CLOEXEC) = 7
+127751 read(7, "DRIVER=rtw_8822ce\nPCI_CLASS=2800"..., 4104) = 165
+127751 openat(AT_FDCWD, "/run/udev/data/+pci:0000:03:00.0", O_RDONLY|O_CLOEXEC) = 7
+127751 read(7, "I:2664533\nE:ID_PCI_CLASS_FROM_DA"..., 4096) = 303
+127751 read(7, "", 4096)                = 0
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 8
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "pci0000:00", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "0000:00:02.2", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(AT_FDCWD, "/sys/devices/pci0000:00/0000:00:02.2/uevent", O_RDONLY|O_NOCTTY|O_CLOEXEC) = 7
+127751 read(7, "DRIVER=pcieport\nPCI_CLASS=60400\n"..., 4104) = 163
+127751 openat(AT_FDCWD, "/run/udev/data/+pci:0000:00:02.2", O_RDONLY|O_CLOEXEC) = 7
+127751 read(7, "I:2664375\nE:ID_PCI_CLASS_FROM_DA"..., 4096) = 315
+127751 read(7, "", 4096)                = 0
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 8
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "pci0000:00", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127758 read(0, "\t\"Realtek RTL8822CE\"\n\twifi (rtw_"..., 8147) = 73
+127758 read(0, "\tip4 default, ip6 default\n\tinet4"..., 8074) = 125
+127758 read(0, "\tinet6 2401:4900:1f24:66e7:258e:"..., 7949) = 160
+127758 read(0, "\troute6 default via fe80::1 metr"..., 7789) = 84
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 8
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "class", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "net", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "lo", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(10, "..", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "..", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH|O_DIRECTORY) = 10
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "virtual", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "net", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "lo", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(AT_FDCWD, "/sys/devices/virtual/net/lo/uevent", O_RDONLY|O_NOCTTY|O_CLOEXEC) = 7
+127751 read(7, "INTERFACE=lo\nIFINDEX=1\n", 4104) = 23
+127751 openat(AT_FDCWD, "/run/udev/data/n1", O_RDONLY|O_CLOEXEC) = 7
+127751 read(7, "I:2580061\nE:ID_MM_CANDIDATE=1\nE:"..., 4096) = 51
+127751 read(7, "", 4096)                = 0
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 8
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "virtual", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "net", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 8
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "virtual", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 8
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127758 read(0, "\t\"lo\"\n\tloopback (unknown), 00:00"..., 7705) = 60
+127758 read(0, "\tinet4 127.0.0.1/8\n\tinet6 ::1/12"..., 7645) = 69
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 8
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "class", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "net", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "wlp5s0f4u2", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(10, "..", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "..", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH|O_DIRECTORY) = 10
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "pci0000:00", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "0000:00:08.1", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "0000:05:00.4", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "usb3", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "3-2", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127755 read(6, "\3\0\0\0\0\0\0\0", 8)   = 8
+127751 openat(10, "3-2:1.0", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH <unfinished ...>
+127755 read(6,  <unfinished ...>
+127751 <... openat resumed>)            = 9
+127755 <... read resumed>0x7f26e23fac40, 8) = -1 EAGAIN (Resource temporarily unavailable)
+127751 openat(9, "net", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "wlp5s0f4u2", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(AT_FDCWD, "/sys/devices/pci0000:00/0000:00:08.1/0000:05:00.4/usb3/3-2/3-2:1.0/net/wlp5s0f4u2/uevent", O_RDONLY|O_NOCTTY|O_CLOEXEC) = 7
+127751 read(7, "DEVTYPE=wlan\nINTERFACE=wlp5s0f4u"..., 4104) = 44
+127751 openat(AT_FDCWD, "/run/udev/data/n5", O_RDONLY|O_CLOEXEC) = 7
+127755 read(6, "\1\0\0\0\0\0\0\0", 8)   = 8
+127755 read(6,  <unfinished ...>
+127751 read(7,  <unfinished ...>
+127755 <... read resumed>0x7f26e23fac40, 8) = -1 EAGAIN (Resource temporarily unavailable)
+127751 <... read resumed>"I:25595969255\nE:ID_NET_NAMING_SC"..., 4096) = 1114
+127751 read(7, "", 4096)                = 0
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 8
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "pci0000:00", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "0000:00:08.1", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "0000:05:00.4", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "usb3", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "3-2", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "3-2:1.0", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "net", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 8
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "pci0000:00", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "0000:00:08.1", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "0000:05:00.4", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "usb3", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "3-2", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "3-2:1.0", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 8
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "class", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "net", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "wlp5s0f4u2", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(10, "..", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "..", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH|O_DIRECTORY) = 10
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "pci0000:00", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "0000:00:08.1", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "0000:05:00.4", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "usb3", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "3-2", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "3-2:1.0", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "net", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "wlp5s0f4u2", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(AT_FDCWD, "/sys/devices/pci0000:00/0000:00:08.1/0000:05:00.4/usb3/3-2/3-2:1.0/net/wlp5s0f4u2/uevent", O_RDONLY|O_NOCTTY|O_CLOEXEC) = 7
+127751 read(7, "DEVTYPE=wlan\nINTERFACE=wlp5s0f4u"..., 4104) = 44
+127751 openat(AT_FDCWD, "/run/udev/data/n5", O_RDONLY|O_CLOEXEC) = 7
+127751 read(7, "I:25595969255\nE:ID_NET_NAMING_SC"..., 4096) = 1114
+127751 read(7, "", 4096)                = 0
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 8
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "pci0000:00", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "0000:00:08.1", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "0000:05:00.4", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "usb3", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "3-2", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "3-2:1.0", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "net", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 8
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "pci0000:00", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "0000:00:08.1", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "0000:05:00.4", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "usb3", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "3-2", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "3-2:1.0", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127758 read(0, "\t\"Ralink MT7601U\"\n\twifi (mt7601u"..., 7576) = 67
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY <unfinished ...>
+127758 read(0, "\n\33[2menp2s0: unavailable\33[0m\n", 7509) = 29
+127751 <... openat resumed>)            = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 8
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "class", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "net", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "enp2s0", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(10, "..", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "..", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH|O_DIRECTORY) = 10
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "pci0000:00", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "0000:00:02.1", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "0000:02:00.0", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "net", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "enp2s0", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(AT_FDCWD, "/sys/devices/pci0000:00/0000:00:02.1/0000:02:00.0/net/enp2s0/uevent", O_RDONLY|O_NOCTTY|O_CLOEXEC) = 7
+127751 read(7, "INTERFACE=enp2s0\nIFINDEX=2\n", 4104) = 27
+127751 openat(AT_FDCWD, "/run/udev/data/n2", O_RDONLY|O_CLOEXEC) = 7
+127751 read(7, "I:3365550\nE:ID_NET_NAMING_SCHEME"..., 4096) = 695
+127751 read(7, "", 4096)                = 0
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 8
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "pci0000:00", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "0000:00:02.1", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "0000:02:00.0", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "net", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 8
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "pci0000:00", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "0000:00:02.1", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "0000:02:00.0", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(AT_FDCWD, "/sys/devices/pci0000:00/0000:00:02.1/0000:02:00.0/uevent", O_RDONLY|O_NOCTTY|O_CLOEXEC) = 7
+127751 read(7, "DRIVER=r8169\nPCI_CLASS=20000\nPCI"..., 4104) = 160
+127751 openat(AT_FDCWD, "/run/udev/data/+pci:0000:02:00.0", O_RDONLY|O_CLOEXEC) = 7
+127751 read(7, "I:2664152\nE:ID_PCI_CLASS_FROM_DA"..., 4096) = 313
+127751 read(7, "", 4096)                = 0
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 8
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "pci0000:00", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "0000:00:02.1", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(AT_FDCWD, "/sys/devices/pci0000:00/0000:00:02.1/uevent", O_RDONLY|O_NOCTTY|O_CLOEXEC) = 7
+127751 read(7, "DRIVER=pcieport\nPCI_CLASS=60400\n"..., 4104) = 163
+127751 openat(AT_FDCWD, "/run/udev/data/+pci:0000:00:02.1", O_RDONLY|O_CLOEXEC) = 7
+127751 read(7, "I:2664033\nE:ID_PCI_CLASS_FROM_DA"..., 4096) = 315
+127751 read(7, "", 4096)                = 0
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 8
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "pci0000:00", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 8
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "class", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "net", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "enp2s0", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(10, "..", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "..", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH|O_DIRECTORY) = 10
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "pci0000:00", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "0000:00:02.1", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "0000:02:00.0", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "net", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "enp2s0", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(AT_FDCWD, "/sys/devices/pci0000:00/0000:00:02.1/0000:02:00.0/net/enp2s0/uevent", O_RDONLY|O_NOCTTY|O_CLOEXEC) = 7
+127751 read(7, "INTERFACE=enp2s0\nIFINDEX=2\n", 4104) = 27
+127751 openat(AT_FDCWD, "/run/udev/data/n2", O_RDONLY|O_CLOEXEC) = 7
+127751 read(7, "I:3365550\nE:ID_NET_NAMING_SCHEME"..., 4096) = 695
+127751 read(7, "", 4096)                = 0
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 8
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "pci0000:00", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "0000:00:02.1", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "0000:02:00.0", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "net", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 8
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "pci0000:00", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "0000:00:02.1", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "0000:02:00.0", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(AT_FDCWD, "/sys/devices/pci0000:00/0000:00:02.1/0000:02:00.0/uevent", O_RDONLY|O_NOCTTY|O_CLOEXEC) = 7
+127751 read(7, "DRIVER=r8169\nPCI_CLASS=20000\nPCI"..., 4104) = 160
+127751 openat(AT_FDCWD, "/run/udev/data/+pci:0000:02:00.0", O_RDONLY|O_CLOEXEC) = 7
+127751 read(7, "I:2664152\nE:ID_PCI_CLASS_FROM_DA"..., 4096) = 313
+127751 read(7, "", 4096)                = 0
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 8
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "pci0000:00", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "0000:00:02.1", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(AT_FDCWD, "/sys/devices/pci0000:00/0000:00:02.1/uevent", O_RDONLY|O_NOCTTY|O_CLOEXEC) = 7
+127751 read(7, "DRIVER=pcieport\nPCI_CLASS=60400\n"..., 4104) = 163
+127751 openat(AT_FDCWD, "/run/udev/data/+pci:0000:00:02.1", O_RDONLY|O_CLOEXEC) = 7
+127751 read(7, "I:2664033\nE:ID_PCI_CLASS_FROM_DA"..., 4096) = 315
+127751 read(7, "", 4096)                = 0
+127751 openat(AT_FDCWD, "/", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 7
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 8
+127751 openat(7, ".", O_RDONLY|O_CLOEXEC|O_PATH|O_DIRECTORY) = 9
+127751 openat(9, "sys", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127751 openat(10, "devices", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 9
+127751 openat(9, "pci0000:00", O_RDONLY|O_NOFOLLOW|O_CLOEXEC|O_PATH) = 10
+127758 read(0, "\t\"Realtek RTL8111/8168/8411\"\n\tet"..., 7480) = 80
+127758 read(0, "\nDNS configuration:\n\tservers: 8."..., 7400) = 80
+127758 read(3,  <unfinished ...>
+127755 read(6, "\1\0\0\0\0\0\0\0", 8)   = 8
+127755 read(6, 0x7f26e23fac40, 8)       = -1 EAGAIN (Resource temporarily unavailable)
+127755 read(6, "\1\0\0\0\0\0\0\0", 8)   = 8
+127755 read(6, 0x7f26e23fac40, 8)       = -1 EAGAIN (Resource temporarily unavailable)
+127755 read(6, "\3\0\0\0\0\0\0\0", 8)   = 8
+127755 read(6, 0x7f26e23fac40, 8)       = -1 EAGAIN (Resource temporarily unavailable)
+127755 read(6, "\1\0\0\0\0\0\0\0", 8)   = 8
+127755 read(6, 0x7f26e23fac40, 8)       = -1 EAGAIN (Resource temporarily unavailable)
+127758 <... read resumed>"\33", 1)      = 1
+127758 read(3, "O", 1)                  = 1
+127758 read(3, "B", 1)                  = 1
+127758 read(3, "\33", 1)                = 1
+127758 read(3, "O", 1)                  = 1
+127758 read(3, "B", 1)                  = 1
+127758 read(0, "\n\tservers: 2401:4900:50:9::280 2"..., 7320) = 301
+127758 read(3, "\33", 1)                = 1
+127758 read(3, "O", 1)                  = 1
+127758 read(3, "B", 1)                  = 1
+127758 read(3, "\33", 1)                = 1
+127758 read(3, "O", 1)                  = 1
+127758 read(3, "B", 1)                  = 1
+127758 read(3, "\33", 1)                = 1
+127758 read(3, "O", 1)                  = 1
+127758 read(3, "B", 1)                  = 1
+127758 read(3, "\33", 1)                = 1
+127758 read(3, "O", 1)                  = 1
+127758 read(3, "B", 1)                  = 1
+127758 read(3, "\33", 1)                = 1
+127758 read(3, "O", 1)                  = 1
+127758 read(3, "B", 1)                  = 1
+127758 read(3, "\33", 1)                = 1
+127758 read(3, "O", 1)                  = 1
+127758 read(3, "B", 1)                  = 1
+127758 read(3, "\33", 1)                = 1
+127758 read(3, "O", 1)                  = 1
+127758 read(3, "B", 1)                  = 1
+127758 read(3, "\33", 1)                = 1
+127758 read(3, "O", 1)                  = 1
+127758 read(3, "B", 1)                  = 1
+127758 read(0, "", 7019)                = 0
+127758 read(3, "\33", 1)                = 1
+127758 read(3, "O", 1)                  = 1
+127758 read(3, "B", 1)                  = 1
+127758 read(3, "\33", 1)                = 1
+127758 read(3, "O", 1)                  = 1
+127758 read(3, "B", 1)                  = 1
+127758 read(3, "\33", 1)                = 1
+127758 read(3, "O", 1)                  = 1
+127758 read(3, "B", 1)                  = 1
+127758 read(3, "\33", 1)                = 1
+127758 read(3, "O", 1)                  = 1
+127758 read(3, "B", 1)                  = 1
+127758 read(3, "\33", 1)                = 1
+127758 read(3, "O", 1)                  = 1
+127758 read(3, "B", 1)                  = 1
+127758 read(3, "\33", 1)                = 1
+127758 read(3, "O", 1)                  = 1
+127758 read(3, "B", 1)                  = 1
+127758 read(3, "\33", 1)                = 1
+127758 read(3, "O", 1)                  = 1
+127758 read(3, "B", 1)                  = 1
+127758 read(3, "\33", 1)                = 1
+127758 read(3, "O", 1)                  = 1
+127758 read(3, "B", 1)                  = 1
+127758 read(3, "\33", 1)                = 1
+127758 read(3, "O", 1)                  = 1
+127758 read(3, "B", 1)                  = 1
+127758 read(3, "\33", 1)                = 1
+127758 read(3, "O", 1)                  = 1
+127758 read(3, "B", 1)                  = 1
+127758 read(3, "\33", 1)                = 1
+127758 read(3, "O", 1)                  = 1
+127758 read(3, "B", 1)                  = 1
+127758 read(3, 0x7ffd11b17cf7, 1)       = ? ERESTARTSYS (To be restarted if SA_RESTART is set)
+127751 --- SIGWINCH {si_signo=SIGWINCH, si_code=SI_KERNEL} ---
+127758 --- SIGWINCH {si_signo=SIGWINCH, si_code=SI_KERNEL} ---
+127758 ioctl(1, TCGETS, {c_iflag=BRKINT|ICRNL|IXON|IXANY|IMAXBEL|IUTF8, c_oflag=NL0|CR0|XTABS|BS0|VT0|FF0|OPOST|ONLCR, c_cflag=B38400|CS8|CREAD|HUPCL, c_lflag=ISIG|IEXTEN|ECHOCTL|ECHOKE, ...}) = 0
+127758 ioctl(1, TCGETS, {c_iflag=BRKINT|ICRNL|IXON|IXANY|IMAXBEL|IUTF8, c_oflag=NL0|CR0|XTABS|BS0|VT0|FF0|OPOST|ONLCR, c_cflag=B38400|CS8|CREAD|HUPCL, c_lflag=ISIG|IEXTEN|ECHOCTL|ECHOKE, ...}) = 0
+127758 ioctl(1, TIOCGWINSZ, {ws_row=2, ws_col=197, ws_xpixel=0, ws_ypixel=0}) = 0
+127758 ioctl(2, TIOCGWINSZ, {ws_row=2, ws_col=197, ws_xpixel=0, ws_ypixel=0}) = 0
+127758 read(3, 0x7ffd11b17cf7, 1)       = ? ERESTARTSYS (To be restarted if SA_RESTART is set)
+127751 --- SIGINT {si_signo=SIGINT, si_code=SI_KERNEL} ---
+127758 --- SIGINT {si_signo=SIGINT, si_code=SI_KERNEL} ---
+127752 read(4, "\1\0\0\0\0\0\0\0", 8)   = 8
+127752 read(4, 0x7f26e3bfdc40, 8)       = -1 EAGAIN (Resource temporarily unavailable)
+127758 openat(AT_FDCWD, "/home/brijesh/.local/state", O_RDONLY) = 4
+127758 openat(AT_FDCWD, "/home/brijesh/.local/state/lesshst", O_RDONLY) = 4
+127758 openat(AT_FDCWD, "/home/brijesh/.local/state/lesshsQ", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 4
+127758 openat(AT_FDCWD, "/home/brijesh/.local/state", O_RDONLY) = 5
+127758 openat(AT_FDCWD, "/home/brijesh/.local/state/lesshst", O_RDONLY) = 5
+127758 openat(AT_FDCWD, "/home/brijesh/.local/state/lesshst", O_RDONLY) = 5
+127758 read(5, ".less-history-file:\n", 4096) = 20
+127758 read(5, "", 4096)                = 0
+127758 ioctl(3, TCSETSW, {c_iflag=BRKINT|ICRNL|IXON|IXANY|IMAXBEL|IUTF8, c_oflag=NL0|CR0|TAB0|BS0|VT0|FF0|OPOST|ONLCR, c_cflag=B38400|CS8|CREAD|HUPCL, c_lflag=ISIG|ICANON|ECHO|ECHOE|ECHOK|IEXTEN|ECHOCTL|ECHOKE, ...}) = 0
+127758 +++ exited with 2 +++
+127751 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=127758, si_uid=1000, si_status=2, si_utime=0, si_stime=0} ---
+127755 +++ exited with 0 +++
+127754 +++ exited with 0 +++
+127753 +++ exited with 0 +++
+127752 +++ exited with 0 +++
+127751 +++ exited with 0 +++

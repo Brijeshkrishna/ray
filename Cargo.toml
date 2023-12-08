@@ -8,7 +8,10 @@ edition = "2021"
 [dependencies]
 colored = "*"
 prettytable = "*"
-tabled = { version = "*", features = ["color"] } 
-libc = "*"
+tabled = { version = "0.14.0", features = ["color"] }
+libc = "0.2.150"
 nix = "*"
-
+terminal_size="*"
+hashbrown = { version = "0.14.1", features = ["rayon"] }
+reqwest = "0.11.22"
+tokio = { version = "1.33.0", features = ["full"] }
