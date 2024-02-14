@@ -1,13 +1,15 @@
-#![allow(unused)]
+use std::ffi::CStr;
+use std::net::Ipv4Addr;
 
+use crate::defin::MacAddr;
 use crate::dev_info::copy_interface;
 
 use libc::{
-    __errno_location, ifreq, in_addr, ioctl, sockaddr, sockaddr_in, socket, strerror, AF_INET,
+    __errno_location, ifreq, ioctl, sockaddr, socket, strerror, AF_INET,
+    SOCK_DGRAM,
 };
 
-use std::{ffi::CStr, net::Ipv4Addr, str::FromStr};
-
+#[macro_export]
 macro_rules! print_error {
     ($prefix:expr $(, $subfix:expr)?) => {
         let rstr = CStr::from_ptr(strerror(*__errno_location())).to_str().unwrap();
@@ -16,115 +18,176 @@ macro_rules! print_error {
     };
 }
 
+#[derive(Debug, Clone)]
 pub struct InetModify {
-    pub sock: i32,
-    pub ifr: libc::ifreq,
+    sock: i32,
+    ifr: ifreq,
+    interface: Option<String>,
 }
 
-macro_rules! to_ptr {
-    ($x:expr) => {
-        //  $x as *mut _ as *mut std::ffi::c_void
-        &($x) as *const _ as *mut std::ffi::c_void
-    };
-}
+// macro_rules! to_ptr {
+//     ($x:expr) => {
+//         //  $x as *mut _ as *mut std::ffi::c_void
+//         &($x) as *const _ as *mut std::ffi::c_void
+//     };
+// }
 
-macro_rules! sizeof {
-    ($ty:ty) => {
-        std::mem::size_of::<$ty>()
-    };
-}
+// macro_rules! sizeof {
+//     ($ty:ty) => {
+//         std::mem::size_of::<$ty>()
+//     };
+// }
 
-macro_rules! copy_to_sockaddr {
-    ($new_ip:expr,$req:expr) => {
-        unsafe {
-            std::ptr::copy(
-                to_ptr!(ip_to_sockaddr_in($new_ip)),
-                to_ptr!($req),
-                sizeof!(sockaddr_in),
-            );
-        }
-    };
-}
-
-pub fn copy_ip(ip: &Ipv4Addr, ifr: &mut ifreq) {
+pub fn ipv4_to_sockaddr(ip: &Ipv4Addr) -> sockaddr {
     let mut addr = [0i8; 14];
 
-    let octets = ip.octets();
+    for (idx, _) in ip.octets().iter().enumerate() {
+        addr[idx + 2] = ip.octets()[idx] as i8;
+    }
 
-    addr[2] = octets[0] as i8;
-    addr[3] = octets[1] as i8;
-    addr[4] = octets[2] as i8;
-    addr[5] = octets[3] as i8;
+    sockaddr {
+        sa_family: AF_INET as u16,
+        sa_data: addr,
+    }
+}
 
-    ifr.ifr_ifru.ifru_dstaddr.sa_family = AF_INET as u16;
-    ifr.ifr_ifru.ifru_dstaddr.sa_data = addr;
+impl Default for InetModify {
+    fn default() -> Self {
+        unsafe {
+            InetModify {
+                sock: socket(AF_INET, SOCK_DGRAM, 0),
+                ifr: std::mem::zeroed(),
+                interface: None,
+            }
+        }
+    }
 }
 
 impl InetModify {
-    pub fn new(interface: &str) -> Option<Self> {
-        let mut inet = unsafe {
-            InetModify {
-                sock: socket(libc::AF_INET, libc::SOCK_DGRAM, 0),
-                ifr: std::mem::zeroed(),
-            }
-        };
+    pub fn new(interface: &str) -> Self {
+        let mut inet = InetModify::default();
+        inet.interface = Some(interface.to_string());
+        copy_interface(&mut inet.ifr.ifr_name, interface);
+        inet
+    }
 
-        copy_interface(&mut inet.ifr, interface);
-        if unsafe { ioctl(inet.sock, libc::SIOCGIFFLAGS, &mut inet.ifr) } == 0 {
-            return Some(inet);
-        }
-        None
+    pub fn set_interface(&mut self, interface: &str) {
+        copy_interface(&mut self.ifr.ifr_name, interface);
+        self.interface = Some(interface.into());
     }
 
     fn call(&mut self, req: u64, req_name: &str) {
         unsafe {
             if ioctl(self.sock, req, &mut self.ifr) != 0 {
                 print_error!(req_name, "(Suggestion: try with sudo)\n");
-                std::process::exit(-1)
+                // dbg!(self);
+                // std::process::exit(-1)
             }
         }
     }
 
     pub fn interface_up(&mut self) {
-        self.call(libc::SIOCGIFFLAGS, "SIOCGIFFLAGS");
-
-        unsafe {
-            self.ifr.ifr_ifru.ifru_flags = self.ifr.ifr_ifru.ifru_flags | libc::IFF_UP as i16
-        };
+        self.ifr.ifr_ifru.ifru_flags = self.get_flag() | libc::IFF_UP as i16;
 
         self.call(libc::SIOCSIFFLAGS, "SIOCSIFFLAGS");
     }
 
     pub fn interface_down(&mut self) {
-        self.call(libc::SIOCGIFFLAGS, "SIOCGIFFLAGS");
-        unsafe {
-            self.ifr.ifr_ifru.ifru_flags =
-                (self.ifr.ifr_ifru.ifru_flags as i32 & (!libc::IFF_UP)) as i16
-        };
+        self.ifr.ifr_ifru.ifru_flags = self.get_flag() & !libc::IFF_UP as i16;
+
         self.call(libc::SIOCSIFFLAGS, "SIOCSIFFLAGS");
     }
+
+    pub fn get_flag(&mut self) -> i16 {
+        self.call(libc::SIOCGIFFLAGS, "SIOCGIFFLAGS");
+        unsafe { self.ifr.ifr_ifru.ifru_flags }
+    }
+
     pub fn rename_interface(&mut self, new_interface: &str) {
-        copy_interface(&mut self.ifr, new_interface);
         // copy_new_interface(new_interface, &mut self.ifr);
         self.interface_down();
+        copy_interface(
+            &mut unsafe { self.ifr.ifr_ifru.ifru_newname },
+            new_interface,
+        );
         self.call(libc::SIOCSIFNAME, "SIOCSIFNAME");
         self.interface_up();
     }
 
-    pub fn change_mac(&mut self, new_mac: &str) {
-        copy_mac(new_mac, &mut self.ifr);
+    pub fn change_mac(&mut self, new_mac: &MacAddr) {
+        // mac_to_sockaddr
+        // copy_mac(new_mac, &mut self.ifr);
+        self.ifr.ifr_ifru.ifru_hwaddr = mac_to_sockaddr(new_mac);
         self.call(libc::SIOCSIFHWADDR, "SIOCSIFHWADDR");
     }
 
-    pub fn add_ip(&mut self, new_ip: &str) {
-        copy_to_sockaddr!(new_ip, self.ifr.ifr_ifru.ifru_addr);
+    pub fn get_mac(&mut self) -> MacAddr {
+        self.call(libc::SIOCGIFHWADDR, "SIOCGIFFLAGS");
+
+        unsafe {
+            MacAddr::from_vec(
+                &self
+                    .ifr
+                    .ifr_ifru
+                    .ifru_hwaddr
+                    .sa_data
+                    .iter()
+                    .take(6)
+                    .map(|&byte| byte as u8)
+                    .collect::<Vec<u8>>(),
+            )
+        }
+    }
+    pub fn add_ip(&mut self, new_ip: &Ipv4Addr) {
+        self.ifr.ifr_ifru.ifru_addr = ipv4_to_sockaddr(new_ip);
+        // copy_to_sockaddr!(new_ip, self.ifr.ifr_ifru.ifru_addr);
         self.call(libc::SIOCSIFADDR, "SIOCSIFADDR");
     }
+    pub fn get_ip4(&self) -> Vec<Ipv4Addr> {
+        // self.ifr.ifr_ifru.ifru_addr = copy_ip4addr_to_sockin(&Ipv4Addr::UNSPECIFIED);
 
+        let mut ifconf: libc::ifconf = unsafe { std::mem::zeroed() };
+
+        let mut buffer: [libc::c_char; 16384] = [0; 16384];
+
+        ifconf.ifc_ifcu.ifcu_req = buffer.as_mut_ptr() as *mut ifreq;
+        ifconf.ifc_len = 16384;
+
+        // self.call(libc::SIOCGIFCONF, "SIOCGIFCONF");
+
+        let _ = unsafe { libc::ioctl(self.sock, libc::SIOCGIFCONF, &mut ifconf) };
+
+        let num_interfaces = ifconf.ifc_len / std::mem::size_of::<ifreq>() as i32;
+
+        let mut interfaces = Vec::new();
+        for i in 0..num_interfaces {
+            let ifr: ifreq = unsafe { *ifconf.ifc_ifcu.ifcu_req.offset(i as isize) };
+
+            let t = String::from_utf8(
+                ifr.ifr_name
+                    .iter()
+                    .filter(|x| **x > 0)
+                    .map(|x| *x as u8)
+                    .collect(),
+            )
+            .unwrap();
+            if t.eq(self.interface.as_ref().unwrap()) {
+                let ip4 = unsafe { ifr.ifr_ifru.ifru_addr.sa_data };
+
+                interfaces.push(Ipv4Addr::new(
+                    ip4[2] as u8,
+                    ip4[3] as u8,
+                    ip4[4] as u8,
+                    ip4[5] as u8,
+                ));
+            }
+        }
+        interfaces
+    }
     pub fn change_dest_ip(&mut self, new_ip: &Ipv4Addr) {
         // unsafe { copy_to_sockaddr!(new_ip, self.ifr.ifr_ifru.ifru_dstaddr) };
-
-        copy_ip(new_ip, &mut self.ifr);
+        // copy_ip(new_ip, &mut self.ifr);
+        self.ifr.ifr_ifru.ifru_dstaddr = ipv4_to_sockaddr(new_ip);
         self.call(libc::SIOCSIFDSTADDR, "SIOCSIFDSTADDR");
     }
 
@@ -132,12 +195,15 @@ impl InetModify {
         // unsafe { copy_to_sockaddr!(new_ip, self.ifr.ifr_ifru.ifru_broadaddr) };
         // self.call(libc::SIOCSIFBRDADDR, "SIOCSIFBRDADDR");
 
-        copy_ip(new_ip, &mut self.ifr);
+        // copy_ip(new_ip, &mut self.ifr);
+        self.ifr.ifr_ifru.ifru_broadaddr = ipv4_to_sockaddr(new_ip);
 
         self.call(libc::SIOCSIFBRDADDR, "SIOCSIFBRDADDR");
     }
     pub fn change_netmask_ip(&mut self, new_ip: &Ipv4Addr) {
-        copy_ip(new_ip, &mut self.ifr);
+        // copy_ip(new_ip, &mut self.ifr);
+        self.ifr.ifr_ifru.ifru_netmask = ipv4_to_sockaddr(new_ip);
+
         self.call(libc::SIOCSIFNETMASK, "SIOCSIFNETMASK");
     }
     pub fn change_mtu(&mut self, new_mtu: usize) {
@@ -150,57 +216,16 @@ impl InetModify {
     }
 }
 
-#[inline]
-fn ip_to_sockaddr_in(ip4: &str) -> sockaddr_in {
-    sockaddr_in {
-        sin_family: libc::AF_INET as u16,
-        sin_port: 0,
-        sin_addr: in_addr {
-            s_addr: u32::from_be(Ipv4Addr::from_str(ip4).unwrap().into()),
-        },
-        sin_zero: [0; 8],
-    }
-}
 
-fn to_sa_data(x: &Ipv4Addr) -> [i8; 14] {
-    let mut result = [0i8; 14];
-    let o = x.octets();
-    for i in 2..6 {
-        result[i] = o[i - 2] as i8;
-    }
-    result
-}
 
-#[derive(Copy, Clone, PartialEq, Eq, Hash, Default)]
-pub struct MacAddr {
-    octets: [u8; 6],
-}
-impl MacAddr {
-    pub const fn new(a: u8, b: u8, c: u8, d: u8, e: u8, f: u8) -> Self {
-        MacAddr {
-            octets: [a, b, c, d, e, f],
-        }
-    }
+fn mac_to_sockaddr(mac: &MacAddr) -> sockaddr {
+    let mut new_mac = [0i8; 14];
 
-    #[inline]
-    pub const fn octets(&self) -> [u8; 6] {
-        self.octets
+    for (idx, val) in mac.octets().iter().enumerate() {
+        new_mac[idx] = *val as i8;
     }
-}
-
-fn copy_mac(new_mac: &str, req: &mut ifreq) {
-    let mut mac: [i8; 14] = [0; 14];
-    unsafe {
-        let mut mac_u8: [u8; 14] = [0; 14];
-        for (i, hex_byte) in new_mac.replace(":", "").as_bytes().chunks(2).enumerate() {
-            mac_u8[i] = u8::from_str_radix(std::str::from_utf8_unchecked(hex_byte), 16)
-                .expect("Invalid MAC");
-        }
-        std::ptr::copy(mac_u8.as_ptr(), mac.as_mut_ptr() as *mut u8, mac_u8.len());
-    }
-
-    req.ifr_ifru.ifru_hwaddr = sockaddr {
+    sockaddr {
         sa_family: libc::ARPHRD_ETHER,
-        sa_data: mac,
-    };
+        sa_data: new_mac,
+    }
 }

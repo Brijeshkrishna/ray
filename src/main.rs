@@ -1,43 +1,49 @@
+
 mod change;
+mod defin;
+use clap::{FromArgMatches, Parser};
+use defin::MacAddr;
 mod info;
 use std::{
+    any::Any,
     borrow::Cow,
     net::{Ipv4Addr, Ipv6Addr},
     str::FromStr,
 };
-mod defin;
+mod validate;
 use change::*;
+use core::ffi::CStr;
 mod dev;
-use colored::Style;
+mod cli;
 use dev::*;
-use libc::{ifreq, AF_INET, SOCK_DGRAM};
+use libc::{ifreq, socket, AF_INET, SOCK_DGRAM};
 
 use hashbrown::HashMap;
 use reqwest::Response;
 
 use crate::{
     dev::{get, Receive, Transmit},
-    info::copy_interface,
 };
 
 mod dev_info;
 use dev_info::*;
 
-use tabled::{
-    builder::Builder,
-    col,
-    grid::config::AlignmentHorizontal,
-    row,
-    settings::{
-        object::{Column, Columns, Segment},
-        style::*,
-        themes::{Colorization, ColumnNames},
-        Alignment, Color, Modify, *,
-    },
-    Tabled,
-};
-
-mod all;
+// use tabled::{
+//     builder::Builder,
+//     col,
+//     grid::config::AlignmentHorizontal,
+//     macros, row,
+//     settings::{
+//         object::{Column, Columns, Segment},
+//         style::*,
+//         themes::{Colorization, ColumnNames},
+//         Alignment, Color, Modify, *,
+//     },
+//     Tabled,
+// };
+// mod cli;
+// use libc::*;
+// mod all;
 
 #[tokio::main]
 async fn main() {
@@ -65,7 +71,7 @@ async fn main() {
     // change_name("wlp5s0f4u2","wlp3s1");
     // net_up("wlp3s1");
     // info::info();
-
+    // dev_info::display("wlp3s0");
     // change::change_mac("enp2s0", "96d8d983f823");
 
     // let mut ifreq: libc::ifreq =  unsafe { std::mem::zeroed() };
@@ -135,67 +141,62 @@ async fn main() {
 
     // d8:c0:a6:57:73:8b
 
-    #[derive(Copy, Clone, PartialEq, Eq, Hash,Default)]
-    pub struct MacAddr {
-        octets: [u8; 6],
-    }
-    impl MacAddr {
-        pub const fn new(a: u8, b: u8, c: u8, d: u8,e:u8,f:u8) -> Self {
-            MacAddr { octets: [a, b, c, d,e,f] }
-        }
-    
-        #[inline]
-        pub const fn octets(&self) -> [u8; 6] {
-            self.octets
-        }
-        
-    }
-    println!("{:?}",dev_info::display("wlp5s0f3u3"));
+    // #[derive(Copy, Clone, PartialEq, Eq, Hash,Default)]
+    // pub struct MacAddr {
+    //     octets: [u8; 6],
+    // }
+    // impl MacAddr {
+    //     pub const fn new(a: u8, b: u8, c: u8, d: u8,e:u8,f:u8) -> Self {
+    //         MacAddr { octets: [a, b, c, d,e,f] }
+    //     }
+
+    //     #[inline]
+    //     pub const fn octets(&self) -> [u8; 6] {
+    //         self.octets
+    //     }
+
+    // }
+    // println!("{:?}",dev_info::display("wlp5s0f3u3"));
     // info::info();
 
-        let mut  i = change::InetModify::new("wlp5s0f3u3").unwrap();
-        i.change_bordcast_ip(&Ipv4Addr::new(255, 1, 255, 0));
-        // let a = MacAddr::new(0xff,0xc0,0xa6,0x57,0x73,0x8b);
-        // let mut f =[0i8;14];
-        // let b :[i8;6] = a.octets().iter().map(|x| *x as i8 ).collect::<Vec<i8>>().try_into().unwrap();
-        // f[0..6].copy_from_slice(&b);
+    // let mut  i = change::InetModify::new("wlp5s0f3u3").unwrap();
+    // i.change_bordcast_ip(&Ipv4Addr::new(255, 1, 255, 0));
+    // let a = MacAddr::new(0xff,0xc0,0xa6,0x57,0x73,0x8b);
+    // let mut f =[0i8;14];
+    // let b :[i8;6] = a.octets().iter().map(|x| *x as i8 ).collect::<Vec<i8>>().try_into().unwrap();
+    // f[0..6].copy_from_slice(&b);
 
+    // let new_mac = "d8:c0:a6:57:73:8b";
 
-        // let new_mac = "d8:c0:a6:57:73:8b";
+    // let mut mac: [i8; 14] = [0; 14];
 
-        // let mut mac: [i8; 14] = [0; 14];
+    // unsafe {
+    //     let mut mac_u8: [u8; 14] = [0; 14];
+    //     for (i, hex_byte) in new_mac.replace(":", "").as_bytes().chunks(2).enumerate() {
+    //         mac_u8[i] = u8::from_str_radix(std::str::from_utf8_unchecked(hex_byte), 16)
+    //             .expect("Invalid MAC");
+    //     }
+    //     std::ptr::copy(mac_u8.as_ptr(), mac.as_mut_ptr() as *mut u8, mac_u8.len());
+    //     println!("{:?} {:?}",mac , f);
 
-        // unsafe {
-        //     let mut mac_u8: [u8; 14] = [0; 14];
-        //     for (i, hex_byte) in new_mac.replace(":", "").as_bytes().chunks(2).enumerate() {
-        //         mac_u8[i] = u8::from_str_radix(std::str::from_utf8_unchecked(hex_byte), 16)
-        //             .expect("Invalid MAC");
-        //     }
-        //     std::ptr::copy(mac_u8.as_ptr(), mac.as_mut_ptr() as *mut u8, mac_u8.len());
-        //     println!("{:?} {:?}",mac , f);
+    // }
 
-        // }
+    // macro_rules! copy_to_sockaddr {
+    //     ($new_ip:expr,$req:expr) => {
+    //         unsafe {
+    //             std::ptr::copy(
+    //                 to_ptr!(ip_to_sockaddr_in($new_ip)),
+    //                 to_ptr!($req),
+    //                 sizeof!(sockaddr_in),
+    //             );
+    //         }
+    //     };
+    // }
 
+    // let a = "19";
 
-
-
-        macro_rules! copy_to_sockaddr {
-            ($new_ip:expr,$req:expr) => {
-                unsafe {
-                    std::ptr::copy(
-                        to_ptr!(ip_to_sockaddr_in($new_ip)),
-                        to_ptr!($req),
-                        sizeof!(sockaddr_in),
-                    );
-                }
-            };
-        }
-
-        let a = "19";
-        
-
-        // display("wlp3s0");
-        // get_all_ip("wlp3s0");
+    // display("wlp3s0");
+    // get_all_ip("wlp3s0");
     // let mut a = change::setter::new("wlp3s0");
     // a.interface_down();
     // a.change_queue_len(1500);
@@ -206,7 +207,7 @@ async fn main() {
 
     feat: Added ifconf struct
     Adding ifconf struct
-    
+
     As per defined in C
 
     ```c
@@ -252,7 +253,48 @@ async fn main() {
     // let public_ipv6 = response_ipv6.unwrap().text().await.unwrap();
 
     // println!("{} {} ",public_ipv4,public_ipv6);
-    
+
+
+        // `    // use clap_complete::{generate_to, shells::Fish};
+    // let mut cmd = cli::Args::command();
+
+    // generate(Fish, &mut cmd, "cmac", &mut std::io::stdout());
+  //`
+
+    let args = cli::Args::parse();
+
+    match args.interface {
+        Some(interface) => {
+            dev_info::display(&interface);
+        }
+        None => match args.command {
+            Some(cli::Command::Set { interface, c1 }) => {
+                let mut inet = InetModify::new(interface.as_str());
+
+                c1.rename
+                    .map(|new_name| inet.rename_interface(new_name.as_str()));
+
+                c1.ip.map(|new_name| inet.add_ip(&new_name));
+                c1.dip.map(|new_name| inet.change_dest_ip(&new_name));
+                c1.mask.map(|new_name| inet.change_netmask_ip(&new_name));
+                // c1.up.map(|new_name| inet.change_netmask_ip(&new_name));
+                c1.state.map( |x| match x {
+                     cli::InterfaceState::Up => {inet.interface_up()}
+                    cli :: InterfaceState::Down => {inet.interface_down()}
+                }); 
+
+                c1.mac
+                    .map(|new_name| inet.change_mac(&MacAddr::from_str(new_name.as_str())));
+
+
+                
+            }
+            None => {
+                info::info();
+            }
+        },
+    }
+
 
 }
 

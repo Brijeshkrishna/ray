@@ -1,7 +1,8 @@
-#![allow(unused)]
+use crate::defin::MacAddr;
 
 use std::{
-    net::{IpAddr, Ipv4Addr, Ipv6Addr},
+    fs,
+    net::{Ipv4Addr, Ipv6Addr},
     str::FromStr,
 };
 
@@ -11,13 +12,12 @@ use tabled::{
     grid::config::AlignmentHorizontal,
     settings::{
         themes::{Colorization, ColumnNames},
-        Color, Style,
+        Alignment, Color, Style,
     },
     Table,
 };
 
 #[derive(Debug, Default, PartialEq, PartialOrd, Clone, Copy)]
-
 pub struct Transmit {
     bytes: usize,
     packets: usize,
@@ -51,11 +51,11 @@ pub struct WirelessInterface {
 #[derive(Debug, PartialEq, PartialOrd, Clone)]
 pub struct Device {
     interface: String,
-    addr: Vec<String>,
-    dstaddr: String,
+    addr: Vec<Ipv4Addr>,
+    dstaddr: Ipv4Addr,
     broadaddr: Ipv4Addr,
     netmask: Ipv4Addr,
-    hwaddr: Ipv4Addr,
+    hwaddr: MacAddr,
     flag: i16,
     index: i32,
     mtu: i32,
@@ -75,14 +75,14 @@ pub fn get_all_ip(interface: &str) -> Vec<Ipv4Addr> {
     ifconf.ifc_len = 16384;
 
     let socket_fd = unsafe { libc::socket(libc::AF_INET, libc::SOCK_STREAM, 0) };
-    let result = unsafe { libc::ioctl(socket_fd, libc::SIOCGIFCONF, &mut ifconf) };
+    unsafe { libc::ioctl(socket_fd, libc::SIOCGIFCONF, &mut ifconf) };
 
     let num_interfaces = ifconf.ifc_len / std::mem::size_of::<ifreq>() as i32;
 
     let mut interfaces = Vec::new();
     for i in 0..num_interfaces {
         let ifr: ifreq = unsafe { *ifconf.ifc_ifcu.ifcu_req.offset(i as isize) };
-        println!("==={:?}", unsafe { ifr.ifr_ifru.ifru_data });
+        // println!("==={:?}", unsafe { ifr.ifr_ifru.ifru_data });
         let a = unsafe { parse_ipv4(&ifr.ifr_ifru.ifru_addr.sa_data) };
 
         let t = String::from_utf8(
@@ -105,8 +105,14 @@ pub fn display(interface: &str) {
     let rv = Device::new(interface).unwrap();
 
     let mut builder = Builder::new();
+
     builder.push_record([build_ip4(&rv)]);
-    builder.push_record([build_ip6(&getipv6(&rv.interface))]);
+    builder.push_record([build_ip6(
+        &getipv6(&rv.interface)
+            .iter()
+            .map(|x| x.to_string())
+            .collect(),
+    )]);
     builder.push_record([build_hard_info(&rv)]);
     builder.push_record([build_rx_tx(&rv)]);
 
@@ -128,12 +134,13 @@ pub fn display(interface: &str) {
 }
 
 #[inline]
-pub fn copy_interface(req: &mut ifreq, interface: &str) {
+pub fn copy_interface(req: &mut [c_char; IFNAMSIZ], interface: &str) {
     unsafe {
-        std::ptr::copy(
+        std::ptr::write_bytes(req.as_mut_ptr() as *mut u8, 0, IFNAMSIZ);
+        std::ptr::copy_nonoverlapping(
             interface.as_ptr(),
-            req.ifr_name.as_mut_ptr() as *mut u8,
-            interface.len(),
+            req.as_mut_ptr() as *mut u8,
+            interface.len().min(IFNAMSIZ - 1),
         );
     }
 }
@@ -159,7 +166,6 @@ fn parse_ipv4(x: &[i8; 14]) -> Ipv4Addr {
         ip.next().unwrap(),
     )
 }
-use crate::defin::MacAddr;
 
 #[inline]
 fn parse_mac(x: &[i8; 14]) -> MacAddr {
@@ -193,27 +199,40 @@ pub fn get_wireless(interface: &str) -> Option<WirelessInterface> {
     None
 }
 
-pub fn getipv6(interface: &String) -> Vec<String> {
-    let file = std::fs::read_to_string("/proc/net/if_inet6")
-        .expect("Error in reading file /proc/net/if_inet6");
+pub fn getipv6(interface: &String) -> Vec<Ipv6Addr> {
+    let file =
+        fs::read_to_string("/proc/net/if_inet6").expect("Error in reading file /proc/net/if_inet6");
 
     file.split_whitespace()
         .collect::<Vec<&str>>()
         .chunks(6)
-        .filter(|chunk| chunk.get(5) == Some(&interface.as_str()))
+        .filter(|chunk| chunk[5].eq(interface.as_str()))
         .map(|chunk| {
-            chunk[0]
-                .chars()
-                .collect::<Vec<char>>()
-                .chunks(4)
-                .map(|chunk| chunk.iter().collect::<String>())
-                .collect::<Vec<String>>()
-                .join(":")
+            let ip = chunk[0].to_string();
+
+            Ipv6Addr::new(
+                u16::from_str_radix(&ip[..4], 16).unwrap(),
+                u16::from_str_radix(&ip[4..8], 16).unwrap(),
+                u16::from_str_radix(&ip[8..12], 16).unwrap(),
+                u16::from_str_radix(&ip[12..16], 16).unwrap(),
+                u16::from_str_radix(&ip[16..20], 16).unwrap(),
+                u16::from_str_radix(&ip[20..24], 16).unwrap(),
+                u16::from_str_radix(&ip[24..28], 16).unwrap(),
+                u16::from_str_radix(&ip[28..32], 16).unwrap(),
+            )
         })
         .collect()
+    // .map(|chunk| {
+    //     chunk[0]
+    //         .chars()
+    //         .collect::<Vec<char>>()
+    //         .chunks(4)
+    //         .map(|chunk| chunk.iter().collect::<String>())
+    //         .collect::<Vec<String>>()
+    //         .join(":")
+    // })
+    // .collect()
 }
-
-
 
 fn getdev(interface: &str) -> Option<(Receive, Transmit)> {
     let file =
@@ -250,6 +269,25 @@ fn getdev(interface: &str) -> Option<(Receive, Transmit)> {
     }
     None
 }
+impl Default for Device {
+    fn default() -> Self {
+        Self {
+            interface: String::default(),
+            addr: Vec::default(),
+            dstaddr: Ipv4Addr::UNSPECIFIED,
+            broadaddr: Ipv4Addr::UNSPECIFIED,
+            netmask: Ipv4Addr::UNSPECIFIED,
+            hwaddr: MacAddr::default(),
+            flag: i16::default(),
+            index: i32::default(),
+            mtu: i32::default(),
+            tr: Transmit::default(),
+            rx: Receive::default(),
+            qlen: 0,
+            wireless: None,
+        }
+    }
+}
 
 impl Device {
     pub fn new(interface: &str) -> Result<Self, ()> {
@@ -271,7 +309,7 @@ impl Device {
             let sock = socket(AF_INET, SOCK_DGRAM, 0);
 
             let mut req: ifreq = std::mem::zeroed();
-            copy_interface(&mut req, interface);
+            copy_interface(&mut req.ifr_name, interface);
 
             for &code in ioctl_codes.iter() {
                 libc::ioctl(sock, code, &mut req);
@@ -280,14 +318,18 @@ impl Device {
                     libc::SIOCGIFBRDADDR => {
                         rv.broadaddr = parse_ipv4(&req.ifr_ifru.ifru_broadaddr.sa_data)
                     }
-                    libc::SIOCGIFDSTADDR => rv.dstaddr = parse_ipv4(&req.ifr_ifru.ifru_dstaddr.sa_data),
-                    libc::SIOCGIFNETMASK => rv.netmask = parse_ipv4(&req.ifr_ifru.ifru_netmask.sa_data),
+                    libc::SIOCGIFDSTADDR => {
+                        rv.dstaddr = parse_ipv4(&req.ifr_ifru.ifru_dstaddr.sa_data)
+                    }
+                    libc::SIOCGIFNETMASK => {
+                        rv.netmask = parse_ipv4(&req.ifr_ifru.ifru_netmask.sa_data)
+                    }
                     // libc::SIOCGIFADDR => rv.addr = get_ip(req.ifr_ifru.ifru_addr.sa_data),
                     libc::SIOCGIFADDR => rv.addr = get_all_ip(interface),
                     libc::SIOCGIFMTU => rv.mtu = req.ifr_ifru.ifru_mtu,
                     libc::SIOCGIFINDEX => rv.index = req.ifr_ifru.ifru_ifindex,
                     libc::SIOCGIFTXQLEN => rv.qlen = req.ifr_ifru.ifru_metric,
-                    libc::SIOCGIFHWADDR => rv.hwaddr = parse_ipv4(&req.ifr_ifru.ifru_hwaddr.sa_data),
+                    libc::SIOCGIFHWADDR => rv.hwaddr = parse_mac(&req.ifr_ifru.ifru_hwaddr.sa_data),
                     _ => (),
                 }
             }
@@ -365,7 +407,7 @@ fn get_vendor(mac: String) -> Option<String> {
         let d: Vec<&str> = d.split('|').collect();
         v.insert(d.get(0).unwrap().to_string(), d.get(1).unwrap().to_string());
     }
-    v.get(&mac).cloned()
+    v.get(&mac[..8]).cloned()
 }
 
 fn build_hard_info(r: &Device) -> String {
@@ -374,37 +416,47 @@ fn build_hard_info(r: &Device) -> String {
     builder.push_record(["MAC", "Queue", "MTU", "Flag"]);
 
     builder.push_record([
-        r.hwaddr.to_owned(),
+        r.hwaddr.to_hex_string(),
         r.qlen.to_string(),
         r.mtu.to_string(),
         format!("\x1b[32m{}\x1b[0m\n{}", r.flag, style_flag(r.flag)),
     ]);
 
-    // let vendor = get_vendor(r.mac.clone());
-    // if let Some(v) = vendor {
-    //     builder.push_record(["Queue Length", v.as_str()]);
-    // }
-
-    style_table(builder, "┐Hardware Info┌")
-        //.with(Modify::new(Columns::new(3..)).with(Width::wrap(30)))
-        .to_string()
+    let vendor = get_vendor(r.hwaddr.to_hex_string());
+    if let Some(v) = vendor {
+        // builder.push_record(["Vendor", v.as_str()]);
+        return style_table(&builder, "┐Hardware Info┌")
+            .with(tabled::settings::Panel::footer(v))
+            .with(Style::modern().intersection_bottom('─').intersection('*'))
+            .to_string();
+    }
+    //.with(Modify::new(Columns::new(3..)).with(Width::wrap(30)))
+    style_table(&builder, "┐Hardware Info┌").to_string()
 }
 
 fn build_ip4(r: &Device) -> String {
     let mut builder = Builder::new();
+
     builder.push_record(["Address", "Netmask", "Broadcast", "Destination Address"]);
+
     builder.push_record([
-        r.addr.join("\n").as_str(),
-        r.netmask.as_str(),
-        r.broadaddr.as_str(),
-        r.dstaddr.as_str(),
+        r.addr
+            .iter()
+            .map(|x| x.to_string())
+            .collect::<Vec<String>>()
+            .join("\n"),
+        r.netmask.to_string(),
+        r.broadaddr.to_string(),
+        r.dstaddr.to_string(),
     ]);
     // builder.push_record(["Public IP", ip4]);
 
-    style_table(builder, "┐IPv4 Info┌").to_string()
+    style_table(&builder, "┐IPv4 Info┌").to_string()
 }
 
-fn style_table(t: Builder, head: &str) -> Table {
+fn style_table(t: &Builder, head: &str) -> Table {
+    let t = t.to_owned();
+
     t.build()
         .with(Style::modern())
         .with(Colorization::rows([
@@ -413,23 +465,23 @@ fn style_table(t: Builder, head: &str) -> Table {
         ]))
         .with(ColumnNames::new([head]))
         .to_owned()
+    // .with(Settings::new(Alignment::center(), Alignment::center()))
 }
 
 fn build_wireless(r: &Device) -> Option<String> {
-    let mut builder = Builder::new();
-    builder.push_record(["Link", "Level", "Noise"]);
-
     if let Some(x) = &r.wireless {
-        builder.push_record([x.link.to_string(), x.level.to_string(), x.noise.to_string()]);
-    } else {
-        return None;
-    }
+        let mut builder = Builder::new();
 
-    Some(style_table(builder, "┐Wireless┌").to_string())
+        builder.push_record(["Link", "Level", "Noise"]);
+        builder.push_record([x.link.to_string(), x.level.to_string(), x.noise.to_string()]);
+        return Some(style_table(&builder, "┐Wireless┌").to_string());
+    }
+    return None;
 }
 
 fn build_ip6(r: &Vec<String>) -> String {
     let mut builder = Builder::new();
+
     builder.push_record([
         "Global Address",
         Ipv6Addr::from_str(r.get(0).unwrap_or(&"::".to_string()).as_str())
@@ -446,6 +498,7 @@ fn build_ip6(r: &Vec<String>) -> String {
     ]);
 
     builder
+        .to_owned()
         .build()
         .with(Style::modern())
         .with(Colorization::columns([
