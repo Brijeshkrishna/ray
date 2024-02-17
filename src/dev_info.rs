@@ -11,8 +11,7 @@ use tabled::{
     builder::Builder,
     grid::config::AlignmentHorizontal,
     settings::{
-        themes::{Colorization, ColumnNames},
-        Alignment, Color, Style,
+        themes::{Colorization, ColumnNames}, Color, Style,
     },
     Table,
 };
@@ -69,7 +68,7 @@ pub struct Device {
 pub fn get_all_ip(interface: &str) -> Vec<Ipv4Addr> {
     let mut ifconf: ifconf = unsafe { std::mem::zeroed() };
 
-    let mut buffer: [c_char; 16384] = [0; 16384];
+    let buffer: [c_char; 16384] = [0; 16384];
 
     ifconf.ifc_ifcu.ifcu_req = buffer.as_ptr() as *mut ifreq;
     ifconf.ifc_len = 16384;
@@ -111,7 +110,7 @@ pub fn display(interface: &str) {
         &getipv6(&rv.interface)
             .iter()
             .map(|x| x.to_string())
-            .collect(),
+            .collect::<Vec<String>>(),
     )]);
     builder.push_record([build_hard_info(&rv)]);
     builder.push_record([build_rx_tx(&rv)]);
@@ -199,14 +198,14 @@ pub fn get_wireless(interface: &str) -> Option<WirelessInterface> {
     None
 }
 
-pub fn getipv6(interface: &String) -> Vec<Ipv6Addr> {
+pub fn getipv6(interface: &str) -> Vec<Ipv6Addr> {
     let file =
         fs::read_to_string("/proc/net/if_inet6").expect("Error in reading file /proc/net/if_inet6");
 
     file.split_whitespace()
         .collect::<Vec<&str>>()
         .chunks(6)
-        .filter(|chunk| chunk[5].eq(interface.as_str()))
+        .filter(|chunk| chunk[5].eq(interface))
         .map(|chunk| {
             let ip = chunk[0].to_string();
 
@@ -405,7 +404,7 @@ fn get_vendor(mac: String) -> Option<String> {
     for line in reader.lines() {
         let d = line.unwrap();
         let d: Vec<&str> = d.split('|').collect();
-        v.insert(d.get(0).unwrap().to_string(), d.get(1).unwrap().to_string());
+        v.insert(d.first().unwrap().to_string(), d.get(1).unwrap().to_string());
     }
     v.get(&mac[..8]).cloned()
 }
@@ -416,13 +415,13 @@ fn build_hard_info(r: &Device) -> String {
     builder.push_record(["MAC", "Queue", "MTU", "Flag"]);
 
     builder.push_record([
-        r.hwaddr.to_hex_string(),
+        r.hwaddr.to_string(),
         r.qlen.to_string(),
         r.mtu.to_string(),
         format!("\x1b[32m{}\x1b[0m\n{}", r.flag, style_flag(r.flag)),
     ]);
 
-    let vendor = get_vendor(r.hwaddr.to_hex_string());
+    let vendor = get_vendor(r.hwaddr.to_string());
     if let Some(v) = vendor {
         // builder.push_record(["Vendor", v.as_str()]);
         return style_table(&builder, "┐Hardware Info┌")
@@ -476,15 +475,15 @@ fn build_wireless(r: &Device) -> Option<String> {
         builder.push_record([x.link.to_string(), x.level.to_string(), x.noise.to_string()]);
         return Some(style_table(&builder, "┐Wireless┌").to_string());
     }
-    return None;
+    None
 }
 
-fn build_ip6(r: &Vec<String>) -> String {
+fn build_ip6(r: &[String]) -> String {
     let mut builder = Builder::new();
 
     builder.push_record([
         "Global Address",
-        Ipv6Addr::from_str(r.get(0).unwrap_or(&"::".to_string()).as_str())
+        Ipv6Addr::from_str(r.first().unwrap_or(&"::".to_string()).as_str())
             .unwrap()
             .to_string()
             .as_str(),
