@@ -32,7 +32,7 @@ fn get_activation<'a>(flag: u16) -> &'a str {
 }
 
 #[inline]
-fn get_activation_bool<'a>(flag: u16) -> bool {
+fn get_activation_bool(flag: u16) -> bool {
     if flag as i32 & IFF_RUNNING != 0 {
         return true;
     }
@@ -49,7 +49,7 @@ fn get_interface_type(flag: u16, interface: &str) -> char {
     if std::fs::metadata(format!("/sys/class/net/{interface}/wireless")).is_ok() {
         return '';
     }
-    return '󰈀';
+    '󰈀'
 }
 
 pub fn get_all_interface() -> Vec<String> {
@@ -70,7 +70,7 @@ fn read_oui() -> HashMap<String, String>{
     for line in reader.lines() {
         let d = line.unwrap();
         let d: Vec<&str> = d.split('|').collect();
-        v.insert(d.get(0).unwrap().to_string(), d.get(1).unwrap().to_string());
+        v.insert(d.first().unwrap().to_string(), d.get(1).unwrap().to_string());
     }
     v
 }
@@ -84,22 +84,22 @@ pub fn info() {
     let mut inet = InetModify::default();
     let v = read_oui();
     for interface in get_all_interface() {
-        inet.set_interface(&interface);
+        inet.set_interface_name(&interface);
 
-        let flag = inet.get_flag() as u16;
+        let flag = inet.get_flag().unwrap() as u16;
 
-        let mac = inet.get_mac().to_hex_string();
+        let mac = inet.get_mac().unwrap().to_string();
 
         let mut ip = "-".to_string();
 
         if get_activation_bool(flag) {
             // ip = format!("{}\n{:?}", inet.get_ip4(), getip6(interface.as_str()))
-            let ips = inet.get_ip4();
+            let ips = inet.get_ip4().unwrap();
             if ips.len() == 1 {
                 ip = ips.first().unwrap().to_string();
             }
             else{
-                ip = format!("{}", inet.get_ip4().iter().map(|x| x.to_string()).collect::<Vec<String>>().join("\n"));
+                ip =inet.get_ip4().unwrap().iter().map(|x| x.to_string()).collect::<Vec<String>>().join("\n");
                 // let mut ipbuilder = Builder::default();
                 // ipbuilder.push_record([ip]);
                 // ip = ipbuilder.build().with(Style::rounded().remove_horizontals()).to_string();

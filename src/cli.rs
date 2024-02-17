@@ -38,7 +38,7 @@ pub struct Change {
     pub rename: Option<String>,
 
     /// change the MAC
-    #[arg(long, value_name = "new mac addr")]
+    #[arg(long, value_name = "new mac addr",value_parser=is_valid_mac)]
     pub mac: Option<String>,
 
     /// add new IP
@@ -59,11 +59,11 @@ pub struct Change {
 
     /// change MUT
     #[arg(short, long)]
-    pub mtu: Option<usize>,
+    pub mtu: Option<u32>,
 
     /// change queue length
     #[arg(short, long)]
-    pub queue: Option<usize>,
+    pub queue: Option<u32>,
 
     #[arg(value_enum)]
     pub state: Option<InterfaceState>,
