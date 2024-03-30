@@ -49,6 +49,9 @@ fn get_interface_type(flag: u16, interface: &str) -> char {
     if std::fs::metadata(format!("/sys/class/net/{interface}/wireless")).is_ok() {
         return '';
     }
+    if interface.starts_with("docker"){
+        return '';
+    }
     '󰈀'
 }
 
@@ -84,6 +87,7 @@ pub fn info() {
     let mut inet = InetModify::default();
     let v = read_oui();
     for interface in get_all_interface() {
+
         inet.set_interface_name(&interface);
 
         let flag = inet.get_flag().unwrap() as u16;

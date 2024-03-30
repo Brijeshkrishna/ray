@@ -1,5 +1,5 @@
 [package]
-name = "cmac"
+name = "ray"
 version = "0.1.0"
 edition = "2021"
 # build = "build.rs"
@@ -7,10 +7,7 @@ edition = "2021"
 
 [dependencies]
 tabled = { version = "*", features = ["color"] }
-libc = "0.2.151"
+libc = "*"
 hashbrown = { version = "0.14.1", features = ["rayon"] }
-reqwest = "0.11.22"
-tokio = { version = "1.33.0", features = ["full"] }
 clap = { version = "4.5.0", features = ["derive"] }
-clap_complete = "*"
-nix="*"
+nix = "*"

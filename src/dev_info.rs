@@ -167,7 +167,7 @@ fn parse_ipv4(x: &[i8; 14]) -> Ipv4Addr {
 }
 
 #[inline]
-fn parse_mac(x: &[i8; 14]) -> MacAddr {
+pub fn parse_mac(x: &[i8; 14]) -> MacAddr {
     let mut ip = x.iter().take(6).map(|&byte| (byte as u8));
     MacAddr::new(
         ip.next().unwrap(),
@@ -395,7 +395,7 @@ fn get_vendor(mac: String) -> Option<String> {
     use std::fs::*;
     use std::io::*;
 
-    let file = File::open("/home/brijesh/Projects/cmac/oui").unwrap();
+    let file = File::open("./oui").unwrap();
     let reader = BufReader::new(file);
     use hashbrown::HashMap;
 

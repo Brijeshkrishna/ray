@@ -3,6 +3,7 @@ use std::ffi::CString;
 use std::net::Ipv4Addr;
 
 use crate::defin::MacAddr;
+use crate::dev_info;
 use crate::dev_info::copy_interface;
 
 use libc::ifconf;
@@ -218,18 +219,18 @@ impl InetModify {
     }
 
     pub fn get_mac(&mut self) -> Result<MacAddr, &'static str> {
-        self.call(libc::SIOCGIFHWADDR, "SIOCGIFFLAGS")?;
+        self.call(libc::SIOCGIFHWADDR, "SIOCGIFHWADDR")?;
+        
+        Ok(unsafe{dev_info::parse_mac(&self.ifr.ifr_ifru.ifru_hwaddr.sa_data)})
+        // let mut octets = [0u8; 6];
+        // for (idx, val) in unsafe { self.ifr.ifr_ifru.ifru_hwaddr.sa_data }
+        //     .iter().take(6)
+        //     .enumerate()
+        // {
+        //     octets[idx] = *val as u8;
+        // }
 
-        let mut octets = [0u8; 6];
-
-        for (idx, val) in unsafe { self.ifr.ifr_ifru.ifru_hwaddr.sa_data }
-            .iter()
-            .enumerate()
-        {
-            octets[idx] = *val as u8;
-        }
-
-        Ok(MacAddr::from_octets(octets))
+        // Ok(MacAddr::from_octets(octets))
     }
 }
 
@@ -277,20 +278,29 @@ impl InetModify {
         let num_iface = ifc.ifc_len / std::mem::size_of::<ifreq>() as i32;
 
         let mut interfaces = Vec::new();
-
         for i in 0..num_iface {
-            let ifr: ifreq = unsafe { *ifc.ifc_ifcu.ifcu_req.offset(i as isize) };
 
-            let iface = unsafe { CString::from_raw(ifr.ifr_name.as_ptr() as *mut i8) };
+            let ifr: ifreq = unsafe { *ifc.ifc_ifcu.ifcu_req.offset(i as isize) };
+            
+            let mut t = vec![];
+            for i in self.ifr.ifr_name{
+                if i == 0 {
+                    break;
+                }
+                t.push(i as u8)
+            }
+
+            // let iface = unsafe { CString::from_raw(ifr.ifr_name.as_ptr() as *mut i8) };
+            let iface = String::from_utf8(t).unwrap();
 
             if iface
-                .as_c_str()
-                .to_str()
-                .unwrap()
+                .as_str()
+                
                 .eq(self.interface.as_ref().unwrap())
             {
                 interfaces.push(InetModify::sockaddr_to_ipv4(&unsafe { ifr.ifr_ifru.ifru_addr }));
             }
+
         }
         Ok(interfaces)
     }
